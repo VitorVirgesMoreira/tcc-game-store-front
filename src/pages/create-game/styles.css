@@ -1,0 +1,66 @@
+.create-game-form {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-create-game {
+  width: 600px;
+  height: 697px;
+
+  border-radius: 35px;
+  background-color: #d9329e;
+
+  display: block;
+  justify-content: center;
+  align-items: center;
+}
+
+.inputs {
+  width: 100%;
+  margin-top: 50px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+input.MuiInputBase-input {
+  width: 400px;
+  height: 40px;
+  border-radius: 5px;
+
+  text-align: center;
+  margin-top: 50px !important;
+  background-color: #f5f8fa !important;
+}
+
+.MuiInput-underline::before {
+  display: none;
+}
+
+.MuiInput-underline::after {
+  display: none;
+}
+
+.button-confirm.MuiButton-root {
+  width: 35%;
+  height: 64px;
+  border-radius: 15px;
+
+  margin-left: 200px;
+  margin-top: 75px;
+
+  background-color: #30c8d9 !important;
+}
+
+label {
+  margin-top: 30px;
+}
+
+.MuiFormControl-root.launchDate {
+  margin-top: -40px;
+}

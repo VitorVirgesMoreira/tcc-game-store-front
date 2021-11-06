@@ -1,0 +1,107 @@
+.login-user-form {
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.login-user-form label {
+  width: 500px;
+  font-size: 50px;
+  color: #a6297a;
+  text-align: center;
+
+  margin-left: 15%;
+}
+
+.container-login {
+  width: 500px;
+  height: 600px;
+
+  margin-top: 4%;
+  margin-right: 12.5%;
+  border-radius: 35px;
+  background-color: #d9329e;
+
+  display: block;
+  justify-content: center;
+  align-items: center;
+}
+
+.labels-login {
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.labels-login label {
+  width: 225px;
+  margin-right: 100px;
+
+  color: black;
+  font-size: 17.5px;
+  text-align: center;
+}
+
+.inputs-login-user {
+  width: 100%;
+  margin-top: 50px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.inputs-login-user .email-user {
+  margin-top: -60px;
+}
+
+input.MuiInputBase-input {
+  width: 400px;
+  height: 40px;
+  border-radius: 5px;
+
+  text-align: center;
+  margin-top: 50px !important;
+  background-color: #f5f8fa !important;
+}
+
+.MuiInput-underline::before {
+  display: none;
+}
+
+.MuiInput-underline::after {
+  display: none;
+}
+
+.buttons-login-user {
+  height: 40%;
+
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-login.MuiButton-root {
+  width: 100px;
+  height: 64px;
+  border-radius: 15px;
+  margin-top: -25px;
+
+  background-color: #30c8d9 !important;
+}
+
+.button-redirect.MuiButton-root {
+  width: 150px;
+  height: 64px;
+  border-radius: 15px;
+
+  margin-top: 25px;
+
+  background-color: #30c8d9 !important;
+}
