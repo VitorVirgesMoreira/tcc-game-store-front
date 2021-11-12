@@ -56,3 +56,8 @@ input.MuiInputBase-input {
 
   background-color: #30c8d9 !important;
 }
+
+.MuiInputAdornment-positionEnd {
+  margin-left: -44px !important;
+  margin-top: 50px;
+}
