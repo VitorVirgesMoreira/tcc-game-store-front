@@ -75,7 +75,7 @@ export default function CreateUsers() {
     } else {
       setSnackbarInfo({
         message:
-          "Senhas muito fraca. Coloque no mínimo 1 letra maiúscula, 1 caracter e 1 número!",
+          "Senhas deve conter no mínimo 8 caracteres. Coloque no mínimo 1 letra maiúscula, 1 caracter especial e 1 número!",
         severity: "error",
         open: true,
         duration: 8000,
