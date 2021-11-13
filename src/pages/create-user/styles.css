@@ -61,3 +61,71 @@ input.MuiInputBase-input {
   margin-left: -42px !important;
   margin-top: 50px;
 }
+
+
+@media only screen and (max-width: 1366px) {
+  .create-user-form {
+    width: 100%;
+  
+    margin-top: -5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container-create-user {
+    width: 480px;
+    height: 550px;
+  
+    border-radius: 35px;
+    background-color: #d9329e;
+  
+    display: block;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+  .inputs-create-user {
+    width: 100%;
+    margin-top: 2px;
+  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  input.MuiInputBase-input {
+    width: 400px;
+    height: 40px;
+    border-radius: 5px;
+  
+    text-align: center;
+    background-color: #f5f8fa !important;
+  }
+  
+  .MuiInput-underline::before {
+    display: none;
+  }
+  
+  .MuiInput-underline::after {
+    display: none;
+  }
+  
+  .button-confirm.MuiButton-root {
+    width: 35%;
+    height: 64px;
+    border-radius: 15px;
+  
+    margin-left: 155px;
+    margin-top: 30px;
+  
+    background-color: #30c8d9 !important;
+  }
+  
+  .MuiInputAdornment-positionEnd {
+    margin-left: -42px !important;
+    margin-top: 50px;
+  }
+}

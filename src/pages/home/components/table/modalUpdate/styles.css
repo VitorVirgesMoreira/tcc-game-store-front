@@ -1,15 +1,8 @@
-.create-game-form {
-  width: 100%;
+.container-create-game-modal {
+  width: 500px;
+  height: 600px;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.container-create-game {
-  width: 600px;
-  height: 697px;
-
+  margin-left: 750px;
   border-radius: 35px;
   background-color: #d9329e;
 
@@ -18,7 +11,7 @@
   align-items: center;
 }
 
-.inputs {
+.inputs-modal {
   width: 100%;
   margin-top: 50px;
 
@@ -46,13 +39,13 @@ input.MuiInputBase-input {
   display: none;
 }
 
-.button-create.MuiButton-root {
+.button-create-modal.MuiButton-root {
   width: 35%;
   height: 64px;
   border-radius: 15px;
 
-  margin-left: 200px;
-  margin-top: 75px;
+  margin-left: 155px;
+  margin-top: 50px;
 
   background-color: #30c8d9 !important;
 }
@@ -61,23 +54,16 @@ label {
   margin-top: 30px;
 }
 
-.launchDate {
+.launchDateModal {
   margin-top: -40px;
 }
 
 @media only screen and (max-width: 1366px) {
-  .create-game-form {
-    width: 100%;
-
-    margin-top: -6%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .container-create-game {
+  .container-create-game-modal {
     width: 480px;
     height: 550px;
+    margin-left: 450px;
+    margin-top: 40px;
 
     border-radius: 35px;
     background-color: #d9329e;
@@ -87,7 +73,7 @@ label {
     align-items: center;
   }
 
-  .inputs {
+  .inputs-modal {
     width: 100%;
     margin-top: 5px;
 
@@ -115,7 +101,7 @@ label {
     display: none;
   }
 
-  .button-create.MuiButton-root {
+  .button-create-modal.MuiButton-root {
     width: 35%;
     height: 64px;
     border-radius: 15px;

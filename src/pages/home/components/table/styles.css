@@ -1,0 +1,70 @@
+table.MuiTable-root {
+  max-width: 75%;
+  margin: auto;
+  border-collapse: separate !important;
+  border-spacing: 5px !important;
+  margin-top: 15px;
+  margin-left: 20%;
+  padding-left: 30px;
+  display: block;
+  align-items: center;
+  justify-content: center;
+}
+
+tr.MuiTableRow-root.MuiTableRow-head {
+  background: #dcdcdc;
+}
+
+.titleRow{
+  background-color:  #bdbdbd!important;
+}
+
+.MuiTableRow-root:nth-child(odd) {
+  background: #f0f0f0;
+}
+
+.MuiTableCell-root.nameCell {
+  width: 35%;
+}
+
+.MuiTableCell-root.developerCell {
+  width: 30%;
+}
+
+.MuiTableCell-root.dateCell {
+  width: 15%;
+}
+
+.MuiTableCell-root.icons {
+  display: flex;
+  justify-content: space-between !important;
+  align-items: center;
+}
+
+.MuiTableCell-root.icons .edit,
+.trash {
+  cursor: pointer;
+}
+
+.MuiTableCell-root {
+  border-radius: 4px;
+}
+
+tr.MuiTableRow-root {
+  background: #f6f8fa;
+}
+
+@media only screen and (max-width: 1366px) {
+  table.MuiTable-root {
+    width: 100% !important;
+    margin: auto;
+    border-collapse: separate !important;
+    border-spacing: 4px !important;
+    margin-top: 15px;
+    margin-left: 210px;
+
+    display: block;
+    align-items: center;
+    justify-content: center;
+  }
+}

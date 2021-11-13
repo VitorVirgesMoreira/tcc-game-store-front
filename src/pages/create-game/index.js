@@ -1,29 +1,42 @@
 import React, { useState } from "react";
 import "./styles.css";
 import logoVice from "../../assets/imgs/vicegaming.png";
-import { Button, Input, TextField } from "@material-ui/core";
-import { createGame } from "../../services/backend/gameService";
+import { Button, Input } from "@material-ui/core";
+import api from "../../services/api";
+import { useHistory } from "react-router-dom";
 
 export default function CreateGames() {
-  const [name, setName] = useState("");
-  const [developer, setDeveloper] = useState("");
-  const [dateLaunch, setDateLaunch] = useState();
-  const [price, setPrice] = useState("");
+  function initialState() {
+    return {
+      name: "",
+      developer: "",
+      price: "",
+      dateLaunch: new Date("DD/MM/YYYY"),
+    };
+  }
+  const [values, setValues] = useState(initialState);
+  const history = useHistory();
 
-  const submitData = {
-    name: name,
-    developer: developer,
-    dateLaunch: dateLaunch,
-    price: price,
-  };
+  function onChange(event) {
+    const { value, name } = event.target;
+    setValues({
+      ...values,
+      [name]: value,
+    });
+  }
+
+  function routeChange(path) {
+    history.push(path);
+  }
 
   const handleClick = async () => {
-    const response = await createGame(submitData);
+    const response = await api.post("games", values);
 
-    console.log(response);
-    if (response.status === 200) {
-      
+    if (response?.status === 200) {
+      routeChange("home");
     }
+
+    setValues(initialState);
   };
 
   return (
@@ -35,34 +48,42 @@ export default function CreateGames() {
         <div className="container-create-game">
           <div className="inputs">
             <Input
+              id="name"
+              name="name"
               className="nameGame"
               placeholder="Nome do Jogo"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
+              value={values.name}
+              onChange={onChange}
             />
             <Input
+              id="developer"
+              name="developer"
               className="developer"
               placeholder="Desenvolvedora"
-              value={developer}
-              onChange={(e) => setDeveloper(e.target.value)}
+              value={values.developer}
+              onChange={onChange}
             />
             <Input
+              id="price"
+              name="price"
               className="price"
               placeholder="Preço"
-              value={price}
-              onChange={(e) => setPrice(e.target.value)}
+              value={values.price}
+              onChange={onChange}
             />
             <label> Data de lançamento </label>
-            <TextField
-              id="date"
+            <Input
+              id="dateLaunch"
+              name="dateLaunch"
               type="date"
               className="launchDate"
-              value={dateLaunch}
-              onChange={(e) => setDateLaunch(e.target.value)}
+              placeholder="Data"
+              value={values.dateLaunch}
+              onChange={onChange}
             />
           </div>
           <Button
-            className="button-confirm"
+            className="button-create"
             type="submit"
             variant="contained"
             onClick={async () => handleClick()}

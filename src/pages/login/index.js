@@ -1,6 +1,12 @@
 import React, { useContext, useState } from "react";
 import "./styles.css";
 import logoVice from "../../assets/imgs/vicegaming.png";
+import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
+import VisibilityIcon from "@mui/icons-material/Visibility";
+import { useHistory } from "react-router-dom";
+import api from "../../services/api";
+import StoreContext from "../../components/Store/Context";
+import SnackBar from "../../components/SnackBar";
 import {
   Button,
   Input,
@@ -8,12 +14,6 @@ import {
   InputAdornment,
   TextField,
 } from "@material-ui/core";
-import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
-import VisibilityIcon from "@mui/icons-material/Visibility";
-import { useHistory } from "react-router-dom";
-import api from "../../services/api";
-import StoreContext from "../../components/Store/Context";
-import SnackBar from "../../components/SnackBar";
 
 export default function Login() {
   const [passwordShown, setPasswordShown] = useState(false);
@@ -55,14 +55,12 @@ export default function Login() {
   const { setToken } = useContext(StoreContext);
 
   const login = ({ email, password }, response) => {
-    if (
-      email === response?.email &&
-      password === response?.password
-    ) {
+    if (email === response?.email && password === response?.password) {
       return {
         token: "NmhBPGaHBMFnKbVCmlEO1z6LXpgNFrGY37vBR6YELw6GS6aa6E5a6vWxGfLt",
       };
     }
+
     return setSnackbarInfo({
       message: "Email ou senha inválidos",
       severity: "error",
@@ -80,8 +78,10 @@ export default function Login() {
   }
 
   const handleClick = async () => {
-    const response = await api.get(`users/get-by-email/${values.email}`);
-    console.log(response?.data);
+    const response = await api
+      .get(`users/get-by-email/${values.email}`)
+      .catch((error) => console.error(error));
+
     const token = login(values, response?.data);
 
     if (token) {

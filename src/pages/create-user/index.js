@@ -40,6 +40,13 @@ export default function CreateUsers() {
     setPasswordShown(!passwordShown);
   };
 
+  function replaceString(item) {
+    item.message = item.message.replace(/One or more errors occurred./i, "");
+    item.message = item.message.replace("(", "");
+    item.message = item.message.replace(")", "");
+    item.message = item.message.replace(".", "");
+  }
+
   const validateEmail = (value) => {
     if (!validator.isEmail(value)) {
       setSnackbarInfo({
@@ -90,18 +97,38 @@ export default function CreateUsers() {
         severity: "error",
         open: true,
       });
-    } else {
-      await api
-        .post("users/", user)
-        .then((response) => {
-          console.log(response);
-        })
-        .catch((error) => {
-          console.log(error.response);
-        });
-
-      return routeChange("/");
     }
+    const response = await api.post("users/", user).catch((exception) => {
+      if (!exception.response) {
+        return setSnackbarInfo({
+          message: "Erro de conexão, contate um administrador.",
+          severity: "error",
+          open: true,
+        });
+      }
+
+      const { data } = exception.response?.data;
+      const { status } = exception.response?.status;
+
+      if (data !== undefined && status === 400) data.forEach(replaceString);
+
+      switch (exception.response?.status) {
+        case 400:
+          return setSnackbarInfo({
+            message: exception.response?.data,
+            severity: "error",
+            open: true,
+          });
+        default:
+          setSnackbarInfo({
+            message: "Erro indefinido, contate um administrador.",
+            severity: "error",
+            open: true,
+          });
+      }
+
+    });
+    if (response?.status === 200) return routeChange("/");
   };
 
   const handleClose = (reason) => {
@@ -195,7 +222,7 @@ export default function CreateUsers() {
           <Button
             className="button-confirm"
             type="submit"
-            onClick={async () => handleClick()}
+            onClick={() => handleClick()}
           >
             Criar Conta
           </Button>
