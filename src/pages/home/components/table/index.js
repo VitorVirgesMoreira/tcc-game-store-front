@@ -12,15 +12,23 @@ import "./styles.css";
 import api from "../../../../services/api";
 import UpdateGameModal from "./modalUpdate";
 
-export function GamesTable(props, { close }) {
+export function GamesTable(props) {
   const [openModal, setOpenModal] = useState(false);
+  const [game, setGame] = useState();
+
   const handleDelete = async (id) => {
     await api.put(`games/delete/${id}`);
     document.location.reload(true);
   };
 
-  const openModalUpdate = () => {
-    setOpenModal(true);
+  const openModalUpdate = async (id) => {
+    const response = await api.get(`games/${id}`);
+
+    if (response.status === 200) {
+      setOpenModal(true);
+      setGame(response.data);
+      return;
+    }
   };
 
   const closeModalUpdate = () => {
@@ -35,20 +43,20 @@ export function GamesTable(props, { close }) {
           <TableCell className="nameCell">Nome do Jogo</TableCell>
           <TableCell className="developerCell">Desenvolvedora</TableCell>
           <TableCell className="dateCell">Data de lançamento</TableCell>
-          <TableCell>Preço</TableCell>
-          <TableCell>Ações</TableCell>
+          <TableCell className="priceCell">Preço</TableCell>
+          <TableCell className="actionsCell">Ações</TableCell>
         </TableRow>
       </TableHead>
       <TableBody>
         {props.games?.map((games, index) => (
           <TableRow key={index}>
-            <TableCell>{games.id}</TableCell>
-            <TableCell>{games.name}</TableCell>
+            <TableCell className="idCell">{games.id}</TableCell>
+            <TableCell className="nameCell">{games.name}</TableCell>
             <TableCell className="developerCell">{games.developer}</TableCell>
             <TableCell className="dateCell">
               {Moment(games.dateLaunch).format("DD/MM/YYYY")}
             </TableCell>
-            <TableCell>
+            <TableCell className="priceCell">
               <NumberFormat
                 value={games.price}
                 displayType={"text"}
@@ -56,12 +64,19 @@ export function GamesTable(props, { close }) {
                 prefix={"R$"}
               />
             </TableCell>
-            <TableCell className="icons">
-              <UpdateGameModal game={games} isOpenModal={openModal} handleClose={() => closeModalUpdate()}/>
-              <CreateIcon className="edit" onClick={() => openModalUpdate()} />
+            <TableCell className="actionsCell">
+              <CreateIcon
+                className="edit"
+                onClick={async () => openModalUpdate(games.id)}
+              />
               <DeleteIcon
                 className="trash"
                 onClick={async () => handleDelete(games.id)}
+              />
+              <UpdateGameModal
+                game={game}
+                isOpenModal={openModal}
+                handleClose={() => closeModalUpdate()}
               />
             </TableCell>
           </TableRow>

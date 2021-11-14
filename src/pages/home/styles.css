@@ -12,11 +12,13 @@
 .ant-spin-dot-item {
   background-color: #252320;
 }
+
 .ant-spin {
   color: #30f2f2 !important;
   font-size: 14px;
   font-weight: 600;
 }
+
 .spinContainer {
   position: fixed;
   top: 50%;
@@ -31,9 +33,9 @@
   }
 
   .button-redirect-to-games {
-    width: 9%;
+    width: 10%;
     height: 56px;
-    margin-left: 245px !important;
+    margin-left: 1082.5px !important;
 
     position: fixed;
     background-color: #30f2f2 !important;

@@ -24,15 +24,15 @@ tr.MuiTableRow-root.MuiTableRow-head {
 }
 
 .MuiTableCell-root.nameCell {
-  width: 35%;
+  width: 500px;
 }
 
 .MuiTableCell-root.developerCell {
-  width: 30%;
+  width: 375px;
 }
 
 .MuiTableCell-root.dateCell {
-  width: 15%;
+  width: 100px;
 }
 
 .MuiTableCell-root.icons {
@@ -66,5 +66,29 @@ tr.MuiTableRow-root {
     display: block;
     align-items: center;
     justify-content: center;
+  }
+
+  .MuiTableCell-root.idCell {
+    width: 50px;
+  }
+
+  .MuiTableCell-root.nameCell {
+    width: 450px;
+  }
+  
+  .MuiTableCell-root.developerCell {
+    width: 375px;
+  }
+  
+  .MuiTableCell-root.dateCell {
+    width: 100px;
+  }
+
+  .MuiTableCell-root.price {
+    width: 100px;
+  }
+
+  .MuiTableCell-root.actionsCell {
+    width: 77px;
   }
 }

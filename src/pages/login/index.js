@@ -98,12 +98,12 @@ export default function Login() {
         <img src={logoVice} alt="logoViceGaming" width="210px" height="120px" />
       </div>
       <div className="login-user-form">
-        <label> O lugar mais simples e seguro para comprar seus jogos !</label>
+        <label> O lugar mais simples e seguro para gerenciar seus jogos!</label>
         <div className="container-login">
           <div className="labels-login">
-            <label>Já tem seu acesso aqui?</label>
-            <label>
-              Se sim, se registre agora mesmo ou crie sua conta na VICE GAMING !
+            <label className="label1">Já tem seu acesso aqui?</label>
+            <label className="label2">
+              Ta esperando oque? Entre agora mesmo!
             </label>
           </div>
           <div className="inputs-login-user">

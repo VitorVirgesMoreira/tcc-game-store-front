@@ -25,7 +25,7 @@ export default function UpdateGameModal({ game, isOpenModal, handleClose }) {
   }
 
   const handleClick = async () => {
-    const response = await api.put(`games/${game.id}`, values);
+    const response = await api.put(`games/${game?.id}`, values);
 
     if (response?.status === 200) {
       document.location.reload(true);
