@@ -38,6 +38,7 @@ export default function UpdateGameModal({ game, isOpenModal, handleClose }) {
     <Modal open={isOpenModal} onClose={handleClose}>
       <div className="container-create-game-modal">
         <div className="inputs-modal">
+          <label> Nome do Jogo </label>
           <Input
             id="name"
             name="name"
@@ -46,6 +47,7 @@ export default function UpdateGameModal({ game, isOpenModal, handleClose }) {
             value={values.name}
             onChange={onChange}
           />
+          <label> Desenvolvedora </label>
           <Input
             id="developer"
             name="developer"
@@ -54,6 +56,7 @@ export default function UpdateGameModal({ game, isOpenModal, handleClose }) {
             value={values.developer}
             onChange={onChange}
           />
+          <label> Preço </label>
           <Input
             id="price"
             name="price"

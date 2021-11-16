@@ -64,6 +64,17 @@ label {
 .launchDate {
   margin-top: -40px;
 }
+.nameGame {
+  margin-top: -40px;
+}
+
+.developer {
+  margin-top: -40px;
+}
+
+.price {
+  margin-top: -40px;
+}
 
 @media only screen and (max-width: 1366px) {
   .create-game-form {
@@ -77,7 +88,7 @@ label {
 
   .container-create-game {
     width: 480px;
-    height: 550px;
+    height: 580px;
 
     border-radius: 35px;
     background-color: #d9329e;
@@ -100,6 +111,7 @@ label {
   input.MuiInputBase-input {
     width: 400px;
     height: 40px;
+
     border-radius: 5px;
 
     text-align: center;

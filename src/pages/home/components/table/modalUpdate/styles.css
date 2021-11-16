@@ -45,7 +45,7 @@ input.MuiInputBase-input {
   border-radius: 15px;
 
   margin-left: 155px;
-  margin-top: 50px;
+  margin-top: 45px;
 
   background-color: #30c8d9 !important;
 }
@@ -58,10 +58,22 @@ label {
   margin-top: -40px;
 }
 
+.nameGameModal {
+  margin-top: -40px;
+}
+
+.developerModal {
+  margin-top: -40px;
+}
+
+.priceModal {
+  margin-top: -40px;
+}
+
 @media only screen and (max-width: 1366px) {
   .container-create-game-modal {
     width: 480px;
-    height: 550px;
+    height: 580px;
     margin-left: 450px;
     margin-top: 40px;
 

@@ -15,8 +15,8 @@ tr.MuiTableRow-root.MuiTableRow-head {
   background: #dcdcdc;
 }
 
-.titleRow{
-  background-color:  #bdbdbd!important;
+.titleRow {
+  background-color: #bdbdbd !important;
 }
 
 .MuiTableRow-root:nth-child(odd) {
@@ -41,7 +41,7 @@ tr.MuiTableRow-root.MuiTableRow-head {
   align-items: center;
 }
 
-.MuiTableCell-root.icons .edit,
+.MuiTableCell-root.actionsCell .edit,
 .trash {
   cursor: pointer;
 }
@@ -75,11 +75,11 @@ tr.MuiTableRow-root {
   .MuiTableCell-root.nameCell {
     width: 450px;
   }
-  
+
   .MuiTableCell-root.developerCell {
     width: 375px;
   }
-  
+
   .MuiTableCell-root.dateCell {
     width: 100px;
   }

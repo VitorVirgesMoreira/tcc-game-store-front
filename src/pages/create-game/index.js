@@ -11,7 +11,7 @@ export default function CreateGames() {
       name: "",
       developer: "",
       price: "",
-      dateLaunch: new Date("DD/MM/YYYY"),
+      dateLaunch: new Date("YYYY/MM/DD"),
     };
   }
   const [values, setValues] = useState(initialState);
@@ -47,6 +47,7 @@ export default function CreateGames() {
       <div className="create-game-form">
         <div className="container-create-game">
           <div className="inputs">
+          <label> Nome do Jogo </label>
             <Input
               id="name"
               name="name"
@@ -55,6 +56,7 @@ export default function CreateGames() {
               value={values.name}
               onChange={onChange}
             />
+            <label> Desenvolvedora </label>
             <Input
               id="developer"
               name="developer"
@@ -63,6 +65,7 @@ export default function CreateGames() {
               value={values.developer}
               onChange={onChange}
             />
+            <label> Preço </label>
             <Input
               id="price"
               name="price"
