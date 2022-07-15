@@ -1,2 +1,2 @@
 # tcc-game-store-front
-FrontEnd do TCC de loja de jogos
+Front-end do TCC de loja de jogos dos alunos Vitor Virges Moreira e Davi Bewzenko
